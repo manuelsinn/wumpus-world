@@ -1,17 +1,12 @@
 import java.util.Scanner;
 
 public class Game {
-    static Cave cave;
-    static Agent agent;
-    static Scanner sc;
-    static boolean gameOver;
+    static Cave cave = new Cave(true); //change here for own cave vs random cave
+    static Agent agent = new AI(cave.getAgentPos(), cave); //change here for player vs ai
+    static boolean gameOver = false;
 
 
     public static void main(String[] args) {
-        cave = new Cave(true);  //change here for own cave vs random cave
-        agent = new AI(cave.getAgentPos(), cave); //change here for player vs ai
-        gameOver = false;
-        sc = new Scanner(System.in);
         int rounds = 0;
 
         while (!gameOver && rounds < 1000) {
@@ -28,6 +23,7 @@ public class Game {
 
             System.out.println("Round: " + rounds++ + "\tPosition: " + agent.currentPos + "\t\tScore: " + agent.score);
             cave.printCave();
+            //agent.getKB().printCave();
         }
     }
 

@@ -16,21 +16,19 @@ public class AI extends Agent {
         rnd = new Random();
     }
 
+    @Override
+    KnowledgeBase getKB() {
+        return kb;
+    }
+
 
     @Override
     public boolean goForMove() {
-        if(kb.wumpusPossibilities.size() == 1 && getWumpusDir() != null) return false;
-        else return true;
+        if(kb.getWumpusPos() == null) return true;
+        else return false;
     }
 
-    private Direction getWumpusDir() {
-        Position wumpusPos = kb.wumpusPossibilities.iterator().next();
-        for (Direction dir : Direction.values())
-            if (currentPos.moveTowards(dir).equals(wumpusPos))
-                return dir;
 
-        return null;
-    }
 
 
     @Override
@@ -85,13 +83,13 @@ public class AI extends Agent {
 
     private boolean movePossible(Direction dir, Position currentPos) {
         Position newPos = currentPos.moveTowards(dir);
-        boolean inRowBounds = newPos.row >= 0 && newPos.row <= cave.size-1;
-        boolean inColBounds = newPos.col >= 0 && newPos.col <= cave.size-1;
+        boolean inRowBounds = newPos.y >= 0 && newPos.y <= cave.size-1;
+        boolean inColBounds = newPos.x >= 0 && newPos.x <= cave.size-1;
         return inRowBounds && inColBounds;
     }
 
     @Override
     public Position shoot() {
-        return currentPos.moveTowards(getWumpusDir());
+        return currentPos.moveTowards(kb.getWumpusDir());
     }
 }

@@ -1,15 +1,15 @@
 public abstract class Agent {
     Position currentPos;
-    boolean hasArrow;
-    int score;
+    boolean hasArrow = true;
+    int score = 0;
     Cave cave;
 
     public Agent(Position currentPos, Cave cave) {
         this.currentPos = currentPos;
-        this.score = 0;
-        hasArrow = true;
         this.cave = cave;
     }
+
+    abstract KnowledgeBase getKB();
 
     /** returns true if agent chose move() over shoot()*/
     abstract boolean goForMove();

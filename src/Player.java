@@ -7,6 +7,11 @@ public class Player extends Agent {
         super(currentPos, cave);
     }
 
+    @Override
+    KnowledgeBase getKB() {
+        return null;
+    }
+
 
     @Override
     public boolean goForMove() {
