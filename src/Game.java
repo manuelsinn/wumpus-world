@@ -8,6 +8,8 @@ public class Game {
         int rounds = 0;
 
         while (!gameOver && rounds < 100) {
+
+
             if (agent.goForMove())
 
                 if (agent.move())
@@ -20,12 +22,14 @@ public class Game {
 
 
             System.out.println("Round: " + rounds++ + "\tPosition: " + agent.currentPos + "\t\tScore: " + agent.score);
-            cave.printCave();
-            //agent.getKB().printCave();
+            //cave.printCave();
+            agent.getKB().printCave();
         }
     }
 
+
     private static void reactToShot(Position target) {
+        Hazard h = cave.getHazard(target);
         if (cave.getHazard(target) == Hazard.WUMPUS) {
             System.out.println("Yeehaa! You killed the wumpus.");
             agent.score += 1000;

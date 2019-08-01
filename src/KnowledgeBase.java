@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.util.*;
 
 public class KnowledgeBase {
@@ -11,7 +10,6 @@ public class KnowledgeBase {
     Position agentPos;
 
     private int caveSize;
-
 
 
     public KnowledgeBase(int size) {
@@ -81,7 +79,7 @@ public class KnowledgeBase {
             for (int x = 0; x < caveSize; x++) {
                 Position pos = new Position(x, y);
                 String toAdd = "?  ";
-                //if (isSafe(pos)) toAdd = "ok ";
+                if (isSafe(pos)) toAdd = "ok ";
                 if (breezePos.contains(pos)) toAdd = "~  ";
                 if (stenchPos.contains(pos)) toAdd = "s  ";
                 if (getWumpusPos() != null && getWumpusPos().equals(pos)) toAdd = "W  ";

@@ -50,6 +50,8 @@ public class AI extends Agent {
 
         lastDir = chosenDir;
 
+        kb.update(currentPos, cave.hasStench(currentPos), cave.hasBreeze(currentPos));
+
         // return whether agent has moved
         return !before.equals(currentPos);
     }
@@ -93,6 +95,6 @@ public class AI extends Agent {
 
     @Override
     public Position shoot() {
-        return currentPos.moveTowards(kb.getWumpusDir());
+        return kb.getWumpusPos(); //return currentPos.moveTowards(kb.getWumpusDir());
     }
 }
