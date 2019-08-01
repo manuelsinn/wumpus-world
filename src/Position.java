@@ -30,7 +30,7 @@ public class Position {
     /** moves this currentPos one room in the specified direction */
     public Position moveTowards(Direction dir){
         int yCopy = y; int xCopy = x;
-        if(dir == Direction.UP)  yCopy++;
+        if(dir == Direction.UP) yCopy++;
         if(dir == Direction.DOWN)  yCopy--;
         if(dir == Direction.RIGHT)  xCopy++;
         if(dir == Direction.LEFT)  xCopy--;

@@ -77,9 +77,9 @@ public class KnowledgeBase {
         StringBuilder sb = new StringBuilder();
 
         //add hazards
-        for (int row = 0; row < caveSize; row++) {
-            for (int col = 0; col < caveSize; col++) {
-                Position pos = new Position(row, col);
+        for (int y = caveSize - 1; y >= 0; y--) {
+            for (int x = 0; x < caveSize; x++) {
+                Position pos = new Position(x, y);
                 String toAdd = "?  ";
                 //if (isSafe(pos)) toAdd = "ok ";
                 if (breezePos.contains(pos)) toAdd = "~  ";
@@ -90,7 +90,7 @@ public class KnowledgeBase {
             }
             sb.append("\n");
         }
-        System.out.println(sb.toString());
+        System.out.println(sb.toString() + "\n");
     }
 
     Direction getWumpusDir() {

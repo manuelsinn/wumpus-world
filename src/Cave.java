@@ -18,7 +18,6 @@ public class Cave {
         // add hazards
         //rnd.setSeed(3); //1,3,180
         addAgent(new Position(0, 0));
-        addPit(new Position(2,1));
 
 
         int pits = 3;
@@ -62,7 +61,7 @@ public class Cave {
     }
 
     public boolean addWumpus(Position pos) {
-        if (rooms.get(pos).hazard == Hazard.PIT)
+        if (rooms.get(pos).hazard == Hazard.PIT || rooms.get(pos).hasAgent || (pos.x == 0 && pos.y == 1) || (pos.x == 1 && pos.y == 0))
             return false;
         else
             rooms.get(pos).hazard = Hazard.WUMPUS;
@@ -74,7 +73,7 @@ public class Cave {
     }
 
     public boolean addPit(Position pos) {
-        if (rooms.get(pos).hazard == Hazard.WUMPUS)
+        if (rooms.get(pos).hazard == Hazard.WUMPUS || rooms.get(pos).hasAgent || (pos.x == 0 && pos.y == 1) || (pos.x == 1 && pos.y == 0))
             return false;
         else
             rooms.get(pos).hazard = Hazard.PIT;
@@ -110,7 +109,7 @@ public class Cave {
                 if (rooms.get(pos).hazard == Hazard.CHERRY) toAdd = "C ";
                 if (rooms.get(pos).hazard == Hazard.PIT) toAdd = "O ";
                 if (rooms.get(pos).hazard == Hazard.WUMPUS) toAdd = "W ";
-                if (rooms.get(pos).hasAgent) toAdd = "X ";
+                if (rooms.get(pos).hasAgent) toAdd = "A ";
                 sb.append(toAdd);
             }
             sb.append("\n");

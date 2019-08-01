@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Game {
     static Cave cave = new Cave(true); //change here for own cave vs random cave
     static Agent agent = new AI(cave.getAgentPos(), cave); //change here for player vs ai
@@ -9,7 +7,7 @@ public class Game {
     public static void main(String[] args) {
         int rounds = 0;
 
-        while (!gameOver && rounds < 1000) {
+        while (!gameOver && rounds < 100) {
             if (agent.goForMove())
 
                 if (agent.move())

@@ -24,8 +24,11 @@ public class AI extends Agent {
 
     @Override
     public boolean goForMove() {
-        if(kb.getWumpusPos() == null) return true;
-        else return false;
+        Direction wumpusDir = kb.getWumpusDir();
+        if(wumpusDir == null)
+            return true;
+        else
+            return false;
     }
 
 
