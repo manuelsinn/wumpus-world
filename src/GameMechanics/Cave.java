@@ -1,8 +1,10 @@
+package GameMechanics;
+
 import java.util.*;
 
 public class Cave {
     Room[][] rooms;
-    int size;
+    public int size;
     int pits = 3;
     int wumpusses = 1;
     Random rnd = new Random();
@@ -26,7 +28,7 @@ public class Cave {
 
         // add hazards
         if (random) {
-            rnd.setSeed(3); //1,3,180
+//            rnd.setSeed(3); //1,3,180
 
             for (int i = 0; i < pits; i++) {
                 while (!addPit(rnd.nextInt(size), rnd.nextInt(size))) ;
@@ -54,7 +56,7 @@ public class Cave {
             do System.out.println("Add Cherry (row column):");
             while (!addCherry(sc.nextInt(), sc.nextInt()));
 
-            do System.out.println("Add Player (row column):");
+            do System.out.println("Add Agent.Player (row column):");
             while (!addAgent(sc.nextInt(), sc.nextInt()));
         }
 

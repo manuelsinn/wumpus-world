@@ -1,3 +1,5 @@
+package GameMechanics;
+
 public class Room {
     int id;
     public Hazard hazard;

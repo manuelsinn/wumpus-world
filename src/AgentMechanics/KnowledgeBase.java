@@ -1,4 +1,7 @@
+package AgentMechanics;
+
 import java.util.*;
+import GameMechanics.*;
 
 public class KnowledgeBase {
 

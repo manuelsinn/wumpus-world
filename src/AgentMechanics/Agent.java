@@ -1,7 +1,11 @@
+package AgentMechanics;
+
+import GameMechanics.*;
+
 public abstract class Agent {
-    Position currentPos;
-    boolean hasArrow;
-    int score;
+    public Position currentPos;
+    public boolean hasArrow;
+    public int score;
     Cave cave;
 
     public Agent(Position currentPos, Cave cave) {
@@ -12,11 +16,11 @@ public abstract class Agent {
     }
 
     /** returns true if agent chose move() over shoot()*/
-    abstract boolean goForMove();
+    public abstract boolean goForMove();
 
     /** returns whether the agent has moved or not */
-    abstract boolean move();
+    public abstract boolean move();
 
     /** returns the target */
-    abstract Position shoot();
+    public abstract Position shoot();
 }

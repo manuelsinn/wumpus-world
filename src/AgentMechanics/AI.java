@@ -1,6 +1,9 @@
+package AgentMechanics;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import GameMechanics.*;
 
 public class AI extends Agent {
 

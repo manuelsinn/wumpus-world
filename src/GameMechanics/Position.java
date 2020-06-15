@@ -1,3 +1,5 @@
+package GameMechanics;
+
 import java.util.Objects;
 
 public class Position {
@@ -17,8 +19,7 @@ public class Position {
 
     @Override
     public boolean equals(Object obj) {
-        if(toString().equals(obj.toString())) return true;
-        else return false;
+        return toString().equals(obj.toString());
     }
 
     @Override

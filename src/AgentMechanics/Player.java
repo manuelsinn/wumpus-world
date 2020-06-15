@@ -1,4 +1,7 @@
+package AgentMechanics;
+
 import java.util.Scanner;
+import GameMechanics.*;
 
 public class Player extends Agent {
     Scanner sc = new Scanner(System.in);
@@ -10,12 +13,11 @@ public class Player extends Agent {
 
     @Override
     public boolean goForMove() {
-        if(hasArrow) System.out.println("Move or Shoot? [m | s]");
+        if(hasArrow) System.out.println("SHOOT OR MOVE (S-M)?");
         else return true;
 
         String input = sc.nextLine();
-        if(input.equals("m")) return true;
-        else return false;
+        return input.toLowerCase().equals("m");
     }
 
 

@@ -1,4 +1,9 @@
+import AgentMechanics.Agent;
+
 import java.util.Scanner;
+
+import GameMechanics.*;
+import AgentMechanics.*;
 
 public class Game {
     static Cave cave;
@@ -10,6 +15,7 @@ public class Game {
     public static void main(String[] args) {
         cave = new Cave(true);  //change here for own cave vs random cave
         agent = new AI(cave.getAgentPos(), cave); //change here for player vs ai
+//        agent = new Player(new Position(2,2), cave);
         gameOver = false;
         sc = new Scanner(System.in);
         int rounds = 0;
