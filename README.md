@@ -12,9 +12,9 @@ Whenever you take a step (or move to a different dungeon in the original), a few
 1. You have met the wumpus, the two of you got acquainted and a moment later you are dead.
 2. You have stepped into a pit. Legend has it that you are still falling. No one knows what’s down there.
 3. You have reached a position in which you are not in immediate danger. This leaves three options:
-- You notice nothing but darkness. Instead of damning the boredom, you celebrate the richness of still being alive and continue your journey ecstatically.
-- Your nose picks up an abominable stench, and you try not to panic, although this means that the wumpus is either directly in front of you, behind you or by your side. You are basically doomed and should probably head back to where you came from.
-- Your hair gets all frizzy because a breeze just blew through: a pit is nearby. You remember your fear of heights and proceed with extra caution (and an increasing number of sweat drops on your forehead).
+  - You notice nothing but darkness. Instead of damning the boredom, you celebrate the richness of still being alive and continue your journey ecstatically.
+  - Your nose picks up an abominable stench, and you try not to panic, although this means that the wumpus is either directly in front of you, behind you or by your side. You are basically doomed and should probably head back to where you came from.
+  - Your hair gets all frizzy because a breeze just blew through: a pit is nearby. You remember your fear of heights and proceed with extra caution (and an increasing number of sweat drops on your forehead).
 
 # Different agents at play
 Two agents can play the game: you, via the command line interface, and the AI.
